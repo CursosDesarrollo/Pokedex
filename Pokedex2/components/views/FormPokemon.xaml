@@ -1,0 +1,240 @@
+﻿<Window x:Class="Pokedex2.components.views.FormPokemon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pokedex2.components.views"
+        mc:Ignorable="d"
+        Title="FormPokemon" Height="300" Width="500"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent">
+    <Window.Resources>
+        <Style x:Key="BorderInput" TargetType="Border">
+            <Setter Property="CornerRadius" Value="2" />
+            <Setter Property="Grid.Column" Value="1"/>
+            <Setter Property="BorderBrush" Value="#616161"/>
+            <Setter Property="Background" Value="#616161"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        <Style x:Key="TextError" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontFamily" Value="Flexo"/>
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="TextAlignment" Value="Right"/>
+        </Style>
+    </Window.Resources>
+    <Border
+        BorderBrush="#616161" 
+        CornerRadius="10"
+        BorderThickness="3"
+        Background="White"
+        Name="BorderFormMain">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush 
+                    ImageSource="/assets/img/BackgroundForm.png" 
+                    Stretch="UniformToFill"/>
+            </Grid.Background>
+            <Grid 
+                Height="250"
+                Width="450">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" HorizontalContentAlignment="Center">
+                    <TextBlock Style="{StaticResource TitlesBlock}">
+                        Formulario</TextBlock>
+                </Label>
+                <StackPanel 
+                    Orientation="Vertical"
+                    Grid.Row="1"
+                    Margin="20,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0">
+                            <TextBlock 
+                                FontFamily="Flexo"
+                                FontSize="15">Nombre:</TextBlock>
+                        </Label>
+                        <StackPanel 
+                            Orientation="Vertical"
+                            Width="250"
+                            Grid.Column="1"
+                            HorizontalAlignment="Right">
+                            <Border 
+                                Style="{StaticResource BorderInput}">
+                                <TextBox 
+                                    FontSize="15"
+                                    FontFamily="Roboto"
+                                    Name="TextBoxName">
+                                    <TextBox.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="1" />
+                                        </Style>
+                                    </TextBox.Resources>
+                                </TextBox>
+                            </Border>
+                            <TextBlock 
+                                Style="{StaticResource TextError}"
+                                Visibility="Collapsed"
+                                Text=""
+                                Name="ErrorName"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Margin="0,8,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0">
+                            <TextBlock 
+                                FontFamily="Flexo"
+                                FontSize="15">Url de la imagen:</TextBlock>
+                        </Label>
+                        <StackPanel 
+                            Orientation="Vertical"
+                            Width="250"
+                            HorizontalAlignment="Right"
+                            Grid.Column="1">
+                            <Border 
+                                Style="{StaticResource BorderInput}">
+                                <TextBox 
+                                    FontSize="15"
+                                    FontFamily="Roboto"
+                                    Name="TextBoxUrl">
+                                    <TextBox.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="1" />
+                                        </Style>
+                                    </TextBox.Resources>
+                                </TextBox>
+                            </Border>
+                            <TextBlock 
+                                Style="{StaticResource TextError}"
+                                Visibility="Collapsed"
+                                Text=""
+                                Name="ErrorUrl"/>
+                        </StackPanel>
+                    </Grid>
+                    <StackPanel 
+                        Orientation="Horizontal"
+                        x:Name="ContainerNewTypes"></StackPanel>
+                    <StackPanel 
+                        Orientation="Vertical"
+                        Margin="0,8,0,0">
+                        <Button 
+                            Click="Button_Click"
+                            HorizontalAlignment="Left"
+                            Cursor="Hand">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#4dad5b"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#3c8547"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border 
+                                        CornerRadius="3"
+                                        Padding="10,5"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                            <TextBlock 
+                                Foreground="White"
+                                FontFamily="Flexo"
+                                FontSize="15"
+                                Name="TextButton"
+                                Text="Añadir Tipos"/>
+                        </Button>
+                        <TextBlock
+                            Style="{StaticResource TextError}"
+                            Visibility="Collapsed"
+                            TextAlignment="Left"
+                            Text=""
+                            Name="ErrorTypes"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel 
+                    Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+                    <Button 
+                        Click="Button_Click_1"
+                        Cursor="Hand">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#ee6b2f"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#da471b"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border 
+                                    CornerRadius="3"
+                                    Padding="10,5"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <TextBlock 
+                            Foreground="White"
+                            FontFamily="Flexo"
+                            FontSize="18"
+                            Text="Aceptar"
+                            Name="OptionText"/>
+                    </Button>
+                    <Button 
+                        Margin="10,0,0,0" 
+                        Click="Button_Click_2"
+                        Cursor="Hand">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#c70d28"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#d11732"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border 
+                                    CornerRadius="3"
+                                    Padding="10,5"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <TextBlock 
+                            Foreground="White"
+                            FontFamily="Flexo"
+                            FontSize="18"
+                            >Cancelar</TextBlock>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

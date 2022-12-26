@@ -1,0 +1,86 @@
+﻿<Application x:Class="Pokedex2.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Pokedex2"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="BorderCardPokemon" TargetType="Border">
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="Margin" Value="0,0,0,20"/>
+        </Style>
+        <Style x:Key="GridCard" TargetType="Grid">
+            <Setter Property="Width" Value="220"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <TranslateTransform Y="-5"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="CardPokemon" TargetType="StackPanel">
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Orientation" Value="Vertical"/>
+        </Style>
+        <Style x:Key="BorderImage" TargetType="Border">
+            <Setter Property="Background" Value="#f2f2f2"/>
+            <Setter Property="CornerRadius" Value="20"/>
+        </Style>
+        <Style x:Key="ImagePokemon" TargetType="Image">
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="150"/>
+        </Style>
+        <Style x:Key="TextId" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Flexo"/>
+            <Setter Property="Foreground" Value="#919191"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+        </Style>
+        <Style x:Key="NamePokemon" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Flexo"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#313131"/>
+        </Style>
+        <Style x:Key="TargetProperty" TargetType="Border">
+            <Setter Property="CornerRadius" Value="2"/>
+            <Setter Property="Padding" Value="10,0"/>
+        </Style>
+        <Style x:Key="ButtonOption" TargetType="Button">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.8"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <ControlTemplate x:Key="Options" TargetType="Button">
+            <Border 
+                CornerRadius="5"
+                Padding="15,5"
+                Background="{TemplateBinding Background}">
+                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+        </ControlTemplate>
+        <Style x:Key="TextOption" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="FontFamily" Value="Flexo"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <Style x:Key="ImageContainer" TargetType="Label">
+            <Setter Property="Height" Value="15"/>
+            <Setter Property="Width" Value="15"/>
+        </Style>
+        <Style x:Key="TitlesBlock" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Flexo"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#919191"/>
+        </Style>
+    </Application.Resources>
+</Application>

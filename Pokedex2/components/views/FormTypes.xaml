@@ -1,0 +1,857 @@
+﻿<Window x:Class="Pokedex2.components.views.FormTypes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pokedex2.components.views"
+        mc:Ignorable="d"
+        Title="Pokedex" Height="200" Width="400" 
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent">
+    <Border 
+        Background="White" 
+        BorderBrush="#616161" 
+        CornerRadius="10"
+        BorderThickness="3"
+        Name="MainTypes"
+    >
+        <Grid>
+            <Grid.Background>
+                <ImageBrush 
+                    ImageSource="/assets/img/BackgroundForm.png" 
+                    Stretch="UniformToFill"/>
+            </Grid.Background>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition />
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label 
+                    Grid.Row="0" 
+                    HorizontalContentAlignment="Center">
+                    <TextBlock Style="{StaticResource TitlesBlock}" Text="Elige los tipos"/>
+                </Label>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="0" Grid.Column="0" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="bicho"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=bicho,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#729f3f"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Bicho</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="1" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="dragon"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=dragon,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#f16e57"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Dragon</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="2" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="hada"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=hada,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#fdb9e9"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Hada</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="3" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="fuego"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=fuego,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#fd7d24"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Fuego</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="4" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="fantasma"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=fantasma,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#7b62a3"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Fantasma</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="5" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="tierra"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=tierra,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#ab9842"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Tierra</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="normal"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=normal,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#a4acaf"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Normal</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="psiquico"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=psiquico,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#f366b9"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Psiquico</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="2" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="acero"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=acero,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#9eb7b8"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Acero</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="3" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="siniestro"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=siniestro,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#6e6e6e"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Siniestro</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="4" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="electrico"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=electrico,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#edd435"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Electrico</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="5" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="lucha"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=lucha,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#cc6322"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Lucha</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="0" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="volador"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=volador,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#39bae0"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Volador</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="1" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="planta"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=planta,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#94c34d"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Planta</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="2" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="hielo"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=hielo,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#4fbfe1"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Hielo</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="3" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="veneno"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=veneno,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#b97fc9"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Veneno</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="4" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="roca"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=roca,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#a38c21"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Roca</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="5" Margin="3,0,0,0">
+                        <CheckBox 
+                            Name="agua"
+                            Cursor="Hand"
+                            Click="HandleCheck">
+                            <CheckBox.Template>
+                                <ControlTemplate TargetType="CheckBox">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </CheckBox.Template>
+                            <Border 
+                                BorderBrush="#a4a4a4" 
+                                CornerRadius="2" 
+                                BorderThickness="1"
+                                Background="#a4a4a4">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Opacity" Value="0.5"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=agua,Path=IsChecked}" Value="true">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Label 
+                                    Background="#4592c4"
+                                    HorizontalContentAlignment="Center">
+                                    <Label.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="2"/>
+                                        </Style>
+                                    </Label.Resources>
+                                    <TextBlock 
+                                        Foreground="White"
+                                        FontFamily="Flexo"
+                                        FontSize="10">Agua</TextBlock>
+                                </Label>
+                            </Border>
+                        </CheckBox>
+                    </StackPanel>
+                </Grid>
+                <StackPanel 
+                    Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+                    <Button 
+                        Click="Button_Click_1"
+                        Cursor="Hand">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#ee6b2f"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#da471b"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border 
+                                    CornerRadius="3"
+                                    Padding="10,5"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <TextBlock 
+                            Foreground="White"
+                            FontFamily="Flexo"
+                            FontSize="15"
+                            >Aceptar</TextBlock>
+                    </Button>
+                    <Button 
+                        Cursor="Hand"
+                        Margin="10,0,0,0" Click="Button_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#c70d28"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#d11732"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border 
+                                    CornerRadius="3"
+                                    Padding="10,5"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <TextBlock 
+                            Foreground="White"
+                            FontFamily="Flexo"
+                            FontSize="15"
+                            >Cancelar</TextBlock>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
